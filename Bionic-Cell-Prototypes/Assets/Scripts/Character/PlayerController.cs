@@ -17,14 +17,14 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (rotate)
-        //{
-        //    PlayerRotation();
-        //}
-        //else
-        //{
+        if (rotate)
+        {
+            PlayerRotation();
+        }
+        else
+        {
             PlayerMovement();
-        //}
+        }
     }
 
     private void PlayerMovement()

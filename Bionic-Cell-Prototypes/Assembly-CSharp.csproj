@@ -64,6 +64,10 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Character\CollisionDetectionTest.cs" />
     <Compile Include="Assets\Scripts\Character\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\Item Effects\ItemEffect.cs" />
+    <Compile Include="Assets\Scripts\Item Effects\LobberEffect.cs" />
+    <Compile Include="Assets\Scripts\Scriptable Objects\ItemSOAsset.cs" />
+    <Compile Include="Assets\Scripts\Scriptable Objects\ProjectileSOAsset.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>D:/Github/Bionic-Cell-Unity-Files/Bionic-Cell-Prototypes/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

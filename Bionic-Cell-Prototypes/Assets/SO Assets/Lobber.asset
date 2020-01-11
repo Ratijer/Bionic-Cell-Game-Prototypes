@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2243523039fe70440a43888afcbd6214, type: 3}
+  m_Name: Lobber
+  m_EditorClassIdentifier: 
+  itemPrefab: {fileID: 6734769032874481847, guid: 834d2ed81fb199b4f9c12d5f29a2ecac,
+    type: 3}
+  itemSprite: {fileID: 21300000, guid: 983772fbab0207e4394f734675aec41e, type: 3}
+  usableItemPrefab: {fileID: 6714159319626306070, guid: f3a83d11595d722469b3abacf734c964,
+    type: 3}
+  usableItemSprite: {fileID: 21300000, guid: 983772fbab0207e4394f734675aec41e, type: 3}
+  selectedItemSprite: {fileID: 0}
+  description: 
+  damage: 0
+  health: 0
+  itemType: 1
+  itemState: 0
+  itemScriptName: LobberEffect
+  projectileSOAsset: {fileID: 11400000, guid: 8cf8a197396381e49ae719e152cd74d0, type: 2}
+  buffNum: 0

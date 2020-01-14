@@ -9,21 +9,28 @@ public class LobberEffect : WeaponEffect
     public override void RegisterEventEffect()
     {
         port.AttackEvent += CauseEventEffect;
-        Debug.Log("Registered single shot attack!");
-    }
-
-    public override void CauseEventEffect()
-    {
-        Debug.Log("Doing single shot Attack event");
 
         GameObject weapon = GameObject.Instantiate(item.weaponSOAsset.weaponPrefab, port.transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity) as GameObject;
 
         WeaponBehavior weaponBehavior = weapon.GetComponent<WeaponBehavior>();
         weaponBehavior.SetSOAsset(item);
+        weaponBehavior.SetPort(port);
 
-        Vector3 p = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector3 result = (new Vector3(p.x, p.y, 0.0f) - new Vector3(port.transform.position.x, port.transform.position.y, 0.0f)).normalized;
+        Debug.Log("Registered Lobber!");
+    }
 
-        weaponBehavior.SetDetails(9.0f, result);
+    public override void CauseEventEffect()
+    {
+        //Debug.Log("Doing single shot Attack event");
+
+        //GameObject weapon = GameObject.Instantiate(item.weaponSOAsset.weaponPrefab, port.transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity) as GameObject;
+
+        //WeaponBehavior weaponBehavior = weapon.GetComponent<WeaponBehavior>();
+        //weaponBehavior.SetSOAsset(item);
+
+        //Vector3 p = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        //Vector3 result = (new Vector3(p.x, p.y, 0.0f) - new Vector3(port.transform.position.x, port.transform.position.y, 0.0f)).normalized;
+
+        //weaponBehavior.SetDetails(9.0f, result);
     }
 }

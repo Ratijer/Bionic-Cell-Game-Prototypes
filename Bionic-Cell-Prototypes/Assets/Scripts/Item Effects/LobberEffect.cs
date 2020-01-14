@@ -1,36 +1,29 @@
-﻿//using System.Collections;
-//using System.Collections.Generic;
-//using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
-//public class LobberEffect : ItemEffect
-//{
-//    protected ProjectileSOAsset projectileSOAsset;
+public class LobberEffect : WeaponEffect
+{
+    public LobberEffect(PlayerController player, ItemBehavior item) : base(player, item) { }
 
-//    public LobberEffect(ItemLogic itemLogic) : base(itemLogic)
-//    {
-//        projectileSOAsset = itemLogic.itemSOAsset.projectileSOAsset;
-//    }
+    public override void RegisterEventEffect()
+    {
+        player.AttackEvent += CauseEventEffect;
+        Debug.Log("Registered single shot attack!");
+    }
 
-//    public override void RegisterEventEffect()
-//    {
-//        itemLogic.port.AttackEvent += CauseEventEffect;
-//        Debug.Log("Registered spore lobber effect!");
-//    }
+    public override void CauseEventEffect()
+    {
+        Debug.Log("Doing single shot Attack event");
 
-//    public override void UnregisterEventEffect()
-//    {
-//        itemLogic.port.AttackEvent -= CauseEventEffect;
-//        Debug.Log("Registered spore lobber effect!");
-//    }
+        GameObject weapon = GameObject.Instantiate(item.weaponSOAsset.weaponPrefab, player.transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity) as GameObject;
 
-//    public override void CauseEventEffect()
-//    {
-//        Debug.Log("Doing logic and visual of spore lobber Attack event");
-//        Port port = itemLogic.port;
-//        //UnitLogic unitLogic = weaponLogic.portLogic.unitLogic;
+        WeaponBehavior weaponBehavior = weapon.GetComponent<WeaponBehavior>();
+        weaponBehavior.SetSOAsset(item);
 
-//        // Cause the event effect logically and visually
-//        //Create instance of projectile
-//        //GlobalSettings.instance.tableLogic.CreateProjectileLogic(projectileSOAsset, unitLogic, portLogic.assignedDirection);
-//    }
-//}
+        Vector3 p = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 result = (new Vector3(p.x, p.y, 0.0f) - new Vector3(player.transform.position.x, player.transform.position.y, 0.0f)).normalized;
+
+        weaponBehavior.SetDetails(9.0f, result);
+    }
+}

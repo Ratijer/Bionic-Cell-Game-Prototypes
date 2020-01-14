@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 6714159319626307048}
   - component: {fileID: 6714159319626306071}
   - component: {fileID: 6714159319626307049}
+  - component: {fileID: 8786449507033185030}
   m_Layer: 0
-  m_Name: UsableItem
+  m_Name: Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -115,3 +116,16 @@ PolygonCollider2D:
       - {x: 0.325, y: -0.35999998}
       - {x: 0.325, y: -0.03}
       - {x: 0.185, y: 0.35999998}
+--- !u!114 &8786449507033185030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6714159319626306070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd34a1926c0fb85469c7119db2724ebf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponSOAsset: {fileID: 0}

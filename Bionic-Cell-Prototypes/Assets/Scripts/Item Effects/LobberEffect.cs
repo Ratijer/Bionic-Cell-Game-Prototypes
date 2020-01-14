@@ -11,7 +11,6 @@ public class LobberEffect : WeaponEffect
         port.AttackEvent += CauseEventEffect;
 
         GameObject weapon = GameObject.Instantiate(item.weaponSOAsset.weaponPrefab, port.transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity) as GameObject;
-
         WeaponBehavior weaponBehavior = weapon.GetComponent<WeaponBehavior>();
         weaponBehavior.SetSOAsset(item);
         weaponBehavior.SetPort(port);
@@ -21,7 +20,10 @@ public class LobberEffect : WeaponEffect
 
     public override void CauseEventEffect()
     {
-        //Debug.Log("Doing single shot Attack event");
+        Debug.Log("Lobber activated!");
+
+        //Shoot projectile
+        
 
         //GameObject weapon = GameObject.Instantiate(item.weaponSOAsset.weaponPrefab, port.transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity) as GameObject;
 

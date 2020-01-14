@@ -65,10 +65,12 @@
     <Compile Include="Assets\Scripts\Character\CollisionDetectionTest.cs" />
     <Compile Include="Assets\Scripts\Character\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Character\PortBehavior.cs" />
-    <Compile Include="Assets\Scripts\Item Effects\ItemBehavior.cs" />
+    <Compile Include="Assets\Scripts\Item Effects\Behavior\ItemBehavior.cs" />
+    <Compile Include="Assets\Scripts\Item Effects\Behavior\ProjectileBehavior.cs" />
+    <Compile Include="Assets\Scripts\Item Effects\Behavior\WeaponBehavior.cs" />
     <Compile Include="Assets\Scripts\Item Effects\LobberEffect.cs" />
-    <Compile Include="Assets\Scripts\Item Effects\WeaponBehavior.cs" />
     <Compile Include="Assets\Scripts\Item Effects\WeaponEffect.cs" />
+    <Compile Include="Assets\Scripts\Scriptable Objects\ProjectileSOAsset.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\WeaponSOAsset.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>D:/Github/Bionic-Cell-Unity-Files/Bionic-Cell-Prototypes/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>

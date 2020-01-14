@@ -5,9 +5,9 @@ using UnityEngine;
 
 public class PortBehavior : MonoBehaviour
 {
-    private float _fireRate = 0.25f;
+    //private float _fireRate = 0.25f;
 
-    private float _nextFire = 0.0f;
+    //private float _nextFire = 0.0f;
 
     public delegate void VoidWithNoArguments();
     public event VoidWithNoArguments AttackEvent;
@@ -54,13 +54,13 @@ public class PortBehavior : MonoBehaviour
 
     private void Shoot()
     {
-        if (Time.time > _nextFire)
-        {
-            if (AttackEvent != null)
-            {
-                AttackEvent.Invoke();
-            }
-            _nextFire = Time.time + _fireRate;
-        }
+        //if (Time.time > _nextFire)
+        //{
+        //    if (AttackEvent != null)
+        //    {
+        //        AttackEvent.Invoke();
+        //    }
+        //    _nextFire = Time.time + _fireRate;
+        //}
     }
 }

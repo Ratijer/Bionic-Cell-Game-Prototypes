@@ -210,11 +210,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 260450476629291351, guid: 9a51ee798bf3df44199f69ba7fc5aa62,
-        type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
     - target: {fileID: 260450477448825944, guid: 9a51ee798bf3df44199f69ba7fc5aa62,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -292,12 +287,12 @@ PrefabInstance:
     - target: {fileID: 6734769032874483529, guid: 834d2ed81fb199b4f9c12d5f29a2ecac,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.81
+      value: -3.63
       objectReference: {fileID: 0}
     - target: {fileID: 6734769032874483529, guid: 834d2ed81fb199b4f9c12d5f29a2ecac,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.6
+      value: 2.65
       objectReference: {fileID: 0}
     - target: {fileID: 6734769032874483529, guid: 834d2ed81fb199b4f9c12d5f29a2ecac,
         type: 3}
@@ -344,11 +339,5 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8763018561449933746, guid: 834d2ed81fb199b4f9c12d5f29a2ecac,
-        type: 3}
-      propertyPath: weaponSOAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 3cde0867e1577ba40a6c129cbbd55862,
-        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 834d2ed81fb199b4f9c12d5f29a2ecac, type: 3}

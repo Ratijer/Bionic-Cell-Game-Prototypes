@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class WeaponEffect
 {
-    protected PlayerController player;
+    protected PortBehavior port;
     protected ItemBehavior item;
 
-    public WeaponEffect(PlayerController player, ItemBehavior item)
+    public WeaponEffect(PortBehavior port, ItemBehavior item)
     {
-        this.player = player;
+        this.port = port;
         this.item = item;
     }
 

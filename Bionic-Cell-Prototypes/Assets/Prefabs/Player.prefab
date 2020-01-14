@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 260450476301566715}
   - component: {fileID: 260450476301566468}
   - component: {fileID: 1170139719747230839}
+  - component: {fileID: 1508528902}
   m_Layer: 0
   m_Name: Port3
   m_TagString: Port
@@ -91,7 +92,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -121,6 +122,18 @@ PolygonCollider2D:
       - {x: 0.10921114, y: -0.33266157}
       - {x: 0.11030241, y: -0.32253182}
       - {x: 0.08390911, y: -0.18018475}
+--- !u!114 &1508528902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 260450476301566714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03100eeef6bd7fa4a95ef404fb078033, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &260450476475379105
 GameObject:
   m_ObjectHideFlags: 0
@@ -132,6 +145,7 @@ GameObject:
   - component: {fileID: 260450476475379106}
   - component: {fileID: 260450476475379107}
   - component: {fileID: 8554862656259883863}
+  - component: {fileID: 2038529704}
   m_Layer: 0
   m_Name: Port2
   m_TagString: Port
@@ -212,7 +226,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -242,6 +256,18 @@ PolygonCollider2D:
       - {x: 0.10921114, y: -0.33266157}
       - {x: 0.11030241, y: -0.32253182}
       - {x: 0.08390911, y: -0.18018475}
+--- !u!114 &2038529704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 260450476475379105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03100eeef6bd7fa4a95ef404fb078033, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &260450476629291351
 GameObject:
   m_ObjectHideFlags: 0
@@ -256,7 +282,7 @@ GameObject:
   - component: {fileID: 5871104904344173803}
   m_Layer: 0
   m_Name: BionicCell
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -340,7 +366,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8eb58c51b2480e746b296549a9e4082d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _fireRate: 0.25
   movementSpeed: 5
   rotationSpeed: 90
   rotate: 1
@@ -354,7 +379,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.0092122555, y: 0}
@@ -371,6 +396,7 @@ GameObject:
   - component: {fileID: 260450476726013837}
   - component: {fileID: 260450476726013838}
   - component: {fileID: 1857507862180805677}
+  - component: {fileID: 625571125}
   m_Layer: 0
   m_Name: Port1
   m_TagString: Port
@@ -451,7 +477,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -481,6 +507,18 @@ PolygonCollider2D:
       - {x: 0.10921114, y: -0.33266157}
       - {x: 0.11030241, y: -0.32253182}
       - {x: 0.08390911, y: -0.18018475}
+--- !u!114 &625571125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 260450476726013836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03100eeef6bd7fa4a95ef404fb078033, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &260450477345038400
 GameObject:
   m_ObjectHideFlags: 0
@@ -492,6 +530,7 @@ GameObject:
   - component: {fileID: 260450477345038401}
   - component: {fileID: 260450477345038402}
   - component: {fileID: 6298634693744359475}
+  - component: {fileID: 1226288448}
   m_Layer: 0
   m_Name: Port4
   m_TagString: Port
@@ -572,7 +611,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -602,6 +641,18 @@ PolygonCollider2D:
       - {x: 0.10921114, y: -0.33266157}
       - {x: 0.11030241, y: -0.32253182}
       - {x: 0.08390911, y: -0.18018475}
+--- !u!114 &1226288448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 260450477345038400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03100eeef6bd7fa4a95ef404fb078033, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &260450477448825951
 GameObject:
   m_ObjectHideFlags: 0
@@ -646,7 +697,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8eb58c51b2480e746b296549a9e4082d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _fireRate: 0.25
   movementSpeed: 5
   rotationSpeed: 90
   rotate: 0

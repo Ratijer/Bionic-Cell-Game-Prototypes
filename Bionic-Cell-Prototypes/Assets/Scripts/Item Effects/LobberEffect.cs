@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class LobberEffect : WeaponEffect
 {
-    public LobberEffect(PlayerController player, ItemBehavior item) : base(player, item) { }
+    public LobberEffect(PortBehavior port, ItemBehavior item) : base(port, item) { }
 
     public override void RegisterEventEffect()
     {
-        player.AttackEvent += CauseEventEffect;
+        port.AttackEvent += CauseEventEffect;
         Debug.Log("Registered single shot attack!");
     }
 
@@ -16,13 +16,13 @@ public class LobberEffect : WeaponEffect
     {
         Debug.Log("Doing single shot Attack event");
 
-        GameObject weapon = GameObject.Instantiate(item.weaponSOAsset.weaponPrefab, player.transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity) as GameObject;
+        GameObject weapon = GameObject.Instantiate(item.weaponSOAsset.weaponPrefab, port.transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity) as GameObject;
 
         WeaponBehavior weaponBehavior = weapon.GetComponent<WeaponBehavior>();
         weaponBehavior.SetSOAsset(item);
 
         Vector3 p = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector3 result = (new Vector3(p.x, p.y, 0.0f) - new Vector3(player.transform.position.x, player.transform.position.y, 0.0f)).normalized;
+        Vector3 result = (new Vector3(p.x, p.y, 0.0f) - new Vector3(port.transform.position.x, port.transform.position.y, 0.0f)).normalized;
 
         weaponBehavior.SetDetails(9.0f, result);
     }

@@ -8,7 +8,8 @@ public class ItemBehavior : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        this.gameObject.GetComponent<SpriteRenderer>().sprite = weaponSOAsset.weaponSprite;
+        //this.gameObject.GetComponent<SpriteRenderer>().sprite = weaponSOAsset.weaponSprite;
+        gameObject.transform.parent.GetComponent<SpriteRenderer>().sprite = weaponSOAsset.weaponSprite;     //Change item sprite
     }
 
     // Update is called once per frame
@@ -17,12 +18,12 @@ public class ItemBehavior : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)     //Equip on collision
     {
-        if (collision.tag == "Player")
+        if (collision.tag == "Port")
         {
-            collision.gameObject.GetComponent<PlayerController>().EquipItem(this);
-            Destroy(this.gameObject);
+            collision.gameObject.GetComponent<PortBehavior>().EquipItem(this);
+            Destroy(transform.parent.gameObject);   //Remove item
         }
     }
 }

@@ -7,13 +7,13 @@ public class PlayerController : MonoBehaviour
 {
     //[SerializeField]
     //private float _speed = 5.0f;
-    [SerializeField]
-    private float _fireRate = 0.25f;
+    //[SerializeField]
+    //private float _fireRate = 0.25f;
 
-    private float _nextFire = 0.0f;
+    //private float _nextFire = 0.0f;
 
-    public delegate void VoidWithNoArguments();
-    public event VoidWithNoArguments AttackEvent;
+    //public delegate void VoidWithNoArguments();
+    //public event VoidWithNoArguments AttackEvent;
 
     public float movementSpeed;
     public float rotationSpeed;
@@ -39,49 +39,49 @@ public class PlayerController : MonoBehaviour
 
         if (gameObject.name == "BionicCell")
         {
-            if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0))
-            {
-                Shoot();
-            }
+            //if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0))
+            //{
+            //    Shoot();
+            //}
 
-            RemoveItems();
+            //RemoveItems();
         }
     }
 
-    public void EquipItem(ItemBehavior item)
-    {
-        if (item.weaponSOAsset.weaponScriptName != null && item.weaponSOAsset.weaponScriptName != "")
-        {
-            WeaponEffect weaponEffect = System.Activator.CreateInstance(System.Type.GetType(item.weaponSOAsset.weaponScriptName), new System.Object[] { this, item }) as WeaponEffect;
-            weaponEffect.RegisterEventEffect();
-        }
-    }
+    //public void EquipItem(ItemBehavior item)
+    //{
+    //    if (item.weaponSOAsset.weaponScriptName != null && item.weaponSOAsset.weaponScriptName != "")
+    //    {
+    //        WeaponEffect weaponEffect = System.Activator.CreateInstance(System.Type.GetType(item.weaponSOAsset.weaponScriptName), new System.Object[] { this, item }) as WeaponEffect;
+    //        weaponEffect.RegisterEventEffect();
+    //    }
+    //}
 
-    private void RemoveItems()  //For testing purposes only
-    {
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            if (AttackEvent != null)
-            {
-                foreach (Delegate d in AttackEvent.GetInvocationList())
-                {
-                    AttackEvent -= (VoidWithNoArguments)d;
-                }
-            }
-        }
-    }
+    //private void RemoveItems()  //For testing purposes only
+    //{
+    //    if (Input.GetKeyDown(KeyCode.R))
+    //    {
+    //        if (AttackEvent != null)
+    //        {
+    //            foreach (Delegate d in AttackEvent.GetInvocationList())
+    //            {
+    //                AttackEvent -= (VoidWithNoArguments)d;
+    //            }
+    //        }
+    //    }
+    //}
 
-    private void Shoot()
-    {
-        if (Time.time > _nextFire)
-        {
-            if (AttackEvent != null)
-            {
-                AttackEvent.Invoke();
-            }
-            _nextFire = Time.time + _fireRate;
-        }
-    }
+    //private void Shoot()
+    //{
+    //    if (Time.time > _nextFire)
+    //    {
+    //        if (AttackEvent != null)
+    //        {
+    //            AttackEvent.Invoke();
+    //        }
+    //        _nextFire = Time.time + _fireRate;
+    //    }
+    //}
 
     private void PlayerMovement()
     {

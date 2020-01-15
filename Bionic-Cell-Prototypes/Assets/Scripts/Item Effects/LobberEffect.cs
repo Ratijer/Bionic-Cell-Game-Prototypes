@@ -7,6 +7,10 @@ public class LobberEffect : WeaponEffect
     private GameObject weapon;
     private WeaponBehavior weaponBehavior;
 
+    private float cooldownLeft; //Is at zero unless key is pressed
+    private float cooldown;  //Cool down in seconds
+    private bool isCooldown; //Determines if projectiles are on cooldown
+
     public LobberEffect(PortBehavior port, ItemBehavior item) : base(port, item) { }
 
     public override void RegisterEventEffect()
@@ -18,13 +22,36 @@ public class LobberEffect : WeaponEffect
         weaponBehavior.SetSOAsset(item);
         weaponBehavior.SetPort(port);
 
+        cooldown = weaponBehavior.weaponSOAsset.projectileSOAsset.fireRate;     //Cooldown is fire rate
+
         Debug.Log("Registered Lobber!");
     }
 
     public override void CauseEventEffect()
     {
-        Debug.Log("Lobber activated!");
+        if (isCooldown == false)
+        {
+            Debug.Log("Lobber activated!");
+            Shoot();
+            //Cooldown process begin
+            isCooldown = true;  
+            cooldownLeft = cooldown;   
+        }
+        if (isCooldown)
+        {
+            cooldownLeft -= 1 / cooldown * Time.deltaTime;      //Cooldown process (goes from 1 (or higher) to 0)
 
+            //Cooldown resets when current cooldown is finished.
+            if (cooldownLeft <= 0)
+            {
+                isCooldown = false;
+                cooldownLeft = cooldown;
+            }
+        }
+    }
+
+    private void Shoot()
+    {
         //Shoot projectile
         //Create projectile
         GameObject projectile = GameObject.Instantiate(weaponBehavior.weaponSOAsset.projectileSOAsset.projectilePrefab, weapon.transform.position, weapon.transform.rotation);
@@ -33,17 +60,7 @@ public class LobberEffect : WeaponEffect
         //Make it fly
         rb.AddForce(weapon.transform.up * weaponBehavior.weaponSOAsset.projectileSOAsset.speed, ForceMode2D.Impulse);
 
-        
-
-
-        //GameObject weapon = GameObject.Instantiate(item.weaponSOAsset.weaponPrefab, port.transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity) as GameObject;
-
-        //WeaponBehavior weaponBehavior = weapon.GetComponent<WeaponBehavior>();
-        //weaponBehavior.SetSOAsset(item);
-
-        //Vector3 p = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        //Vector3 result = (new Vector3(p.x, p.y, 0.0f) - new Vector3(port.transform.position.x, port.transform.position.y, 0.0f)).normalized;
-
-        //weaponBehavior.SetDetails(9.0f, result);
+        //Destroy projectile
+        GameObject.Destroy(projectile, weaponBehavior.weaponSOAsset.projectileSOAsset.lifeTime);
     }
 }

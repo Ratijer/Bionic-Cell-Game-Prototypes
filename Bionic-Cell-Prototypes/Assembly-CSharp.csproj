@@ -62,9 +62,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Character\CollisionDetectionTest.cs" />
     <Compile Include="Assets\Scripts\Character\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Character\PortBehavior.cs" />
+    <Compile Include="Assets\Scripts\CollisionDetectionTest.cs" />
     <Compile Include="Assets\Scripts\Item Effects\Behavior\ItemBehavior.cs" />
     <Compile Include="Assets\Scripts\Item Effects\Behavior\ProjectileBehavior.cs" />
     <Compile Include="Assets\Scripts\Item Effects\Behavior\WeaponBehavior.cs" />

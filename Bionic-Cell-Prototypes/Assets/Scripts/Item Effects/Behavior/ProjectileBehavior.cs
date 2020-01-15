@@ -18,9 +18,9 @@ public class ProjectileBehavior : MonoBehaviour
         
     }
 
-    public void SetSOAsset(WeaponBehavior weapon)
+    public void SetSOAsset(WeaponBehavior weaponBehavior)
     {
-        projectileSOAsset = weapon.weaponSOAsset.projectileSOAsset;
+        projectileSOAsset = weaponBehavior.weaponSOAsset.projectileSOAsset;
         gameObject.GetComponent<SpriteRenderer>().sprite = projectileSOAsset.projectileSprite;
     }
 }

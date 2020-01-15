@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 619af59d99124d943b4cc1914b919914, type: 3}
   m_Name: LobberProjectile
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 40
   damage: 30
+  fireRate: 0
   projectilePrefab: {fileID: 3849004729588431281, guid: 32fac5b30a362c54fb408b66a9222433,
     type: 3}
   projectileSprite: {fileID: 21300000, guid: f0564424063b53443ae6336fa9bc0612, type: 3}

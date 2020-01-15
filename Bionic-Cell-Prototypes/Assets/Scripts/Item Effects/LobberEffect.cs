@@ -4,14 +4,17 @@ using UnityEngine;
 
 public class LobberEffect : WeaponEffect
 {
+    private GameObject weapon;
+    private WeaponBehavior weaponBehavior;
+
     public LobberEffect(PortBehavior port, ItemBehavior item) : base(port, item) { }
 
     public override void RegisterEventEffect()
     {
         port.AttackEvent += CauseEventEffect;
 
-        GameObject weapon = GameObject.Instantiate(item.weaponSOAsset.weaponPrefab, port.transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity) as GameObject;
-        WeaponBehavior weaponBehavior = weapon.GetComponent<WeaponBehavior>();
+        weapon = GameObject.Instantiate(item.weaponSOAsset.weaponPrefab, port.transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity) as GameObject;
+        weaponBehavior = weapon.GetComponent<WeaponBehavior>();
         weaponBehavior.SetSOAsset(item);
         weaponBehavior.SetPort(port);
 
@@ -23,7 +26,15 @@ public class LobberEffect : WeaponEffect
         Debug.Log("Lobber activated!");
 
         //Shoot projectile
+        //Create projectile
+        GameObject projectile = GameObject.Instantiate(weaponBehavior.weaponSOAsset.projectileSOAsset.projectilePrefab, weapon.transform.position, weapon.transform.rotation);
+        projectile.GetComponent<ProjectileBehavior>().SetSOAsset(weaponBehavior);       //Give the projectile a sprite from the projectileSOAsset
+        Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
+        //Make it fly
+        rb.AddForce(weapon.transform.up * weaponBehavior.weaponSOAsset.projectileSOAsset.speed, ForceMode2D.Impulse);
+
         
+
 
         //GameObject weapon = GameObject.Instantiate(item.weaponSOAsset.weaponPrefab, port.transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity) as GameObject;
 

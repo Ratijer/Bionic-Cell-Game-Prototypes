@@ -21,7 +21,7 @@ public class PortBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             Shoot();
         }
@@ -56,10 +56,10 @@ public class PortBehavior : MonoBehaviour
     {
         //if (Time.time > _nextFire)
         //{
-        //    if (AttackEvent != null)
-        //    {
-        //        AttackEvent.Invoke();
-        //    }
+            if (AttackEvent != null)
+            {
+                AttackEvent.Invoke();
+            }
         //    _nextFire = Time.time + _fireRate;
         //}
     }

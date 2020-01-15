@@ -13,7 +13,9 @@ public class WeaponEffect
         this.item = item;
     }
 
-    public virtual void RegisterEventEffect() { }
+    public virtual void RegisterEventEffect() { }   //Go from item to weapon and attach to port
 
-    public virtual void CauseEventEffect() { }
+    public virtual void CauseEventEffect() { }      //Weapon does its effect
+
+    public virtual void UnregisterEventEffect() { } //Remove weapon and its effect
 }

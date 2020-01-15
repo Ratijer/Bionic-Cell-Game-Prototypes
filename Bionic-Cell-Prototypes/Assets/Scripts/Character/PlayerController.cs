@@ -96,11 +96,11 @@ public class PlayerController : MonoBehaviour
     private void PlayerRotation()
     {
         //Rotation
-        if (Input.GetMouseButton(0)) //Left
+        if (Input.GetButton("Fire1")) //Left
         {
             transform.Rotate(new Vector3(0f, 0f, rotationSpeed) * Time.deltaTime);
         }
-        if (Input.GetMouseButton(1)) //Right
+        if (Input.GetButton("Fire2")) //Right
         {
             transform.Rotate(new Vector3(0f, 0f, -rotationSpeed) * Time.deltaTime);
         }

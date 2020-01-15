@@ -5,19 +5,13 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    //[SerializeField]
-    //private float _speed = 5.0f;
-    //[SerializeField]
-    //private float _fireRate = 0.25f;
-
-    //private float _nextFire = 0.0f;
-
     //public delegate void VoidWithNoArguments();
     //public event VoidWithNoArguments AttackEvent;
 
     public float movementSpeed;
     public float rotationSpeed;
-    public bool rotate;   
+    public bool rotate;
+    public float playerHealth;
 
     // Start is called before the first frame update
     void Start()
@@ -30,58 +24,36 @@ public class PlayerController : MonoBehaviour
     {
         if (rotate)
         {
-            PlayerRotation();
+            PlayerRotation();   //Cell object (under the player object) will rotate independly of the player object's movement
         }
         else
         {
-            PlayerMovement();
+            PlayerMovement();   
         }
 
         if (gameObject.name == "BionicCell")
         {
-            //if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0))
-            //{
-            //    Shoot();
-            //}
-
-            //RemoveItems();
+             
         }
     }
 
-    //public void EquipItem(ItemBehavior item)
-    //{
-    //    if (item.weaponSOAsset.weaponScriptName != null && item.weaponSOAsset.weaponScriptName != "")
-    //    {
-    //        WeaponEffect weaponEffect = System.Activator.CreateInstance(System.Type.GetType(item.weaponSOAsset.weaponScriptName), new System.Object[] { this, item }) as WeaponEffect;
-    //        weaponEffect.RegisterEventEffect();
-    //    }
-    //}
+    //Take damage from colliding into enemies or projectiles
+    private void OnTriggerEnter2D(Collider2D enemyDamage)     
+    {
+        if (enemyDamage.name == "OuchCube")
+            TakeDamage(enemyDamage.GetComponent<OuchCubeTest>().damage);
+    }
 
-    //private void RemoveItems()  //For testing purposes only
-    //{
-    //    if (Input.GetKeyDown(KeyCode.R))
-    //    {
-    //        if (AttackEvent != null)
-    //        {
-    //            foreach (Delegate d in AttackEvent.GetInvocationList())
-    //            {
-    //                AttackEvent -= (VoidWithNoArguments)d;
-    //            }
-    //        }
-    //    }
-    //}
-
-    //private void Shoot()
-    //{
-    //    if (Time.time > _nextFire)
-    //    {
-    //        if (AttackEvent != null)
-    //        {
-    //            AttackEvent.Invoke();
-    //        }
-    //        _nextFire = Time.time + _fireRate;
-    //    }
-    //}
+    public void TakeDamage(float damage)
+    {
+        Debug.Log("Player was hit!");
+        playerHealth -= damage;
+        Debug.Log("Player Health: " + playerHealth);
+        if (playerHealth <= 0)
+        {
+            Debug.Log("Player has died");
+        }
+    }
 
     private void PlayerMovement()
     {

@@ -70,6 +70,7 @@
     <Compile Include="Assets\Scripts\Item Effects\Behavior\WeaponBehavior.cs" />
     <Compile Include="Assets\Scripts\Item Effects\LobberEffect.cs" />
     <Compile Include="Assets\Scripts\Item Effects\WeaponEffect.cs" />
+    <Compile Include="Assets\Scripts\OuchCubeTest.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\ProjectileSOAsset.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\WeaponSOAsset.cs" />
     <Reference Include="Unity.Timeline.Editor">

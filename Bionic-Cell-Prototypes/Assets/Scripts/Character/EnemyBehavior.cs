@@ -18,7 +18,7 @@ public class EnemyBehavior : MonoBehaviour
     private float waitTime;
     public float startWaitTime = 1;
     private int randomSpot;
-    private int element;
+    private int current;
     public List<Transform> waypoints;
 
     // Start is called before the first frame update
@@ -28,7 +28,7 @@ public class EnemyBehavior : MonoBehaviour
         waitTime = startWaitTime;
         randomSpot = Random.Range(0, waypoints.Count);
         //Find closest point so the plane will travel to it
-        element = FindNearestPoint();
+        current = FindNearestPoint();
     }
 
     // Update is called once per frame
@@ -55,49 +55,24 @@ public class EnemyBehavior : MonoBehaviour
     }
 
     //point towards waypoint 
-    private void PointAtPosition(Vector3 p, float r)
+    private void PointAtPosition(Vector2 p, float r)
     {
-        Vector3 v = p - transform.position;
-        transform.up = Vector3.LerpUnclamped(transform.up, v, r);
+        Vector2 v = p - (Vector2)transform.position;
+        transform.up = Vector2.LerpUnclamped(transform.up, v, r);
     }
 
     private void ServicePatrolState()
     {
-        //Pick waypoint randomly
-        if (randomMovement == true)
+        if (Vector3.Distance(waypoints[current].transform.position, transform.position) < 1)
         {
-            //Enemy will move in the direction of waypoint
-            //Move 
-            transform.position += transform.up * speed * Time.deltaTime;
-            //Point towards point
-            PointAtPosition(waypoints[randomSpot].position, rotateSpeed);
-
-            //Prepare to change point
-            if (Vector3.Distance(transform.position, waypoints[randomSpot].position) < 25f)
+            current = Random.Range(0, waypoints.Count);
+            if (current >= waypoints.Count)
             {
-                randomSpot = Random.Range(0, waypoints.Count);
+                current = 0;
             }
         }
-        //Travel waypoints in a specific sequence
-        else    //RandomPath == false
-        {
-            ////Enemy will move in the direction of waypoint
-            ////Move 
-            //transform.position += transform.up * speed * Time.deltaTime;
-            ////Point towards point
-            PointAtPosition(waypoints[element].position, rotateSpeed);
-
-            ////Prepare to change point
-            //if (Vector3.Distance(transform.position, waypoints[element].position) < 25f)
-            //{
-            //    //Go to next waypoint
-            //    element++;
-            //}
-            ////Reset sequence
-            //if (element >= waypoints.Count)
-            //{
-            //    element = 0;
-            //}
-        }
+        //transform.position = Vector3.MoveTowards(transform.position, waypoints[current].transform.position, Time.deltaTime * speed);  //Move without rotation
+        transform.position += transform.up * speed * Time.smoothDeltaTime;
+        PointAtPosition(waypoints[current].transform.position, rotateSpeed);
     }
 }

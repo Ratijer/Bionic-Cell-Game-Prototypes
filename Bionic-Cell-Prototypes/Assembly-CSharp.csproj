@@ -63,6 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Character\EnemyBehavior.cs" />
+    <Compile Include="Assets\Scripts\Character\NPCBehavior.cs" />
     <Compile Include="Assets\Scripts\Character\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Character\PortBehavior.cs" />
     <Compile Include="Assets\Scripts\CollisionDetectionTest.cs" />

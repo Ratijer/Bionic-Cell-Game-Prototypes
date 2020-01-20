@@ -11,7 +11,7 @@ public class EnemyBehavior : NPCBehavior
         //For patrol state
         //randomSpot = Random.Range(0, waypoints.Count);
         //Find closest point so the plane will travel to it
-        current = FindNearestPoint();
+        //current = FindNearestPoint();
     }
 
     // Update is called once per frame

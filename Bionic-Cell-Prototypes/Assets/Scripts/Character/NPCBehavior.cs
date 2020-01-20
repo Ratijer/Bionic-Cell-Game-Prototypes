@@ -22,6 +22,7 @@ public class NPCBehavior : MonoBehaviour
     protected int current;    //Represents current waypoint the enemy is moving towards
     public List<Transform> waypoints;
 
+    //For testing only
     public bool useWP;
 
     // Start is called before the first frame update

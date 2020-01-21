@@ -9,6 +9,7 @@ public class WeaponSOAsset : ScriptableObject
     [Header("Weapon Visual")]
     public GameObject weaponPrefab;
     public Sprite weaponSprite;
+    public Sprite weaponSpriteSelected; //Sprite when a weapon is selected
 
     [Header("Weapon Effect")]
     public string weaponScriptName;

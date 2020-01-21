@@ -15,6 +15,8 @@ MonoBehaviour:
   weaponPrefab: {fileID: 6714159319626306070, guid: f3a83d11595d722469b3abacf734c964,
     type: 3}
   weaponSprite: {fileID: 21300000, guid: 983772fbab0207e4394f734675aec41e, type: 3}
+  weaponSpriteSelected: {fileID: 21300000, guid: ddb52d28b2fc67946a9de957eaf23a34,
+    type: 3}
   weaponScriptName: LobberEffect
   projectileSOAsset: {fileID: 11400000, guid: d78306140f4fd5742b032217ee344b5c, type: 2}
   weaponType: 1

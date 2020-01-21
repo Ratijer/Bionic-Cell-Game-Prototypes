@@ -69,11 +69,13 @@ public class WeaponSelection : MonoBehaviour
         {
             if(i == selectedWeapon)
             {
-                weapon.gameObject.SetActive(true);
+                //weapon.gameObject.SetActive(true);
+                weapon.gameObject.GetComponent<PortBehavior>().enabled = true;
             }
             else
             {
-                weapon.gameObject.SetActive(false);
+                //weapon.gameObject.SetActive(false);
+                weapon.gameObject.GetComponent<PortBehavior>().enabled = false;
             }
             i++;
         }

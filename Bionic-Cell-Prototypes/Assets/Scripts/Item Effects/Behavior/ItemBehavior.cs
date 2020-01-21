@@ -23,7 +23,7 @@ public class ItemBehavior : MonoBehaviour
         if (collision.tag == "Port")
         {
             collision.gameObject.GetComponent<PortBehavior>().EquipItem(this);
-            Destroy(transform.parent.gameObject);   //Remove item
+            Destroy(transform.parent.gameObject);   //Remove item from scene
         }
     }
 }

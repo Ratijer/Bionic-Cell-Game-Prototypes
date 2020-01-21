@@ -5,11 +5,12 @@ using UnityEngine;
 public class ProjectileBehavior : MonoBehaviour
 {
     public ProjectileSOAsset projectileSOAsset;
+    private float damage;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        damage = projectileSOAsset.damage;
     }
 
     // Update is called once per frame
@@ -29,7 +30,7 @@ public class ProjectileBehavior : MonoBehaviour
         //For testing only
         if (collider.tag == "Enemy")
         {
-            collider.GetComponent<EnemyBehavior>().TakeDamage(25);
+            collider.GetComponent<EnemyBehavior>().TakeDamage(damage);
             //For testing only
             Destroy(gameObject);
         }

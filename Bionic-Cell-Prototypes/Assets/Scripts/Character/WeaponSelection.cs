@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class WeaponSelection : MonoBehaviour
 {
+    private WeaponControl weaponControl = WeaponControl.FireOne;
+    enum WeaponControl
+    {
+        FireAll,    //Fire all weapons at once
+        FireOne     //Fire only one weapon
+    }
+
     public static WeaponSelection instance;
     public int selectedWeapon;
 
@@ -17,11 +24,47 @@ public class WeaponSelection : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        UpdateFSM();
+
+        //For testing only
+        if (Input.GetKey(KeyCode.Q))
+        {
+            weaponControl = WeaponControl.FireAll;
+        }
+    }
+    public void UpdateFSM()
+    {
+        switch (weaponControl)
+        {
+            case WeaponControl.FireOne:
+                WeaponScrollControl();
+                break;
+            case WeaponControl.FireAll:
+                FireAllWeapons();
+                break;
+        }
+    }
+
+    //All weapons will be selected and will be able to activate all at the same time 
+    private void FireAllWeapons()
+    {
+        //if (Input.GetKey(KeyCode.Q))
+        //{
+            foreach (Transform weapon in transform)
+            {
+                //weapon.gameObject.SetActive(true);
+                weapon.GetComponent<WeaponBehavior>().SetSpriteSelected(true);
+            }
+        //}
+    }
+
+    private void WeaponScrollControl()
+    {
         int previousSelectedWeapon = selectedWeapon;
 
-        if(Input.GetAxis("Mouse ScrollWheel") > 0f)
+        if (Input.GetAxis("Mouse ScrollWheel") > 0f)
         {
-            if(selectedWeapon >= transform.childCount - 1)
+            if (selectedWeapon >= transform.childCount - 1)
             {
                 selectedWeapon = 0;
             }
@@ -30,9 +73,9 @@ public class WeaponSelection : MonoBehaviour
                 selectedWeapon++;
             }
         }
-        if(Input.GetAxis("Mouse ScrollWheel") < 0f)
+        if (Input.GetAxis("Mouse ScrollWheel") < 0f)
         {
-            if(selectedWeapon <= 0)
+            if (selectedWeapon <= 0)
             {
                 selectedWeapon = transform.childCount - 1;
             }
@@ -41,7 +84,7 @@ public class WeaponSelection : MonoBehaviour
                 selectedWeapon--;
             }
         }
-        if(Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             selectedWeapon = 0;
         }

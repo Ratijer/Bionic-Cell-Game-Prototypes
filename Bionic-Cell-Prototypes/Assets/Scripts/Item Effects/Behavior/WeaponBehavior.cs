@@ -45,10 +45,14 @@ public class WeaponBehavior : MonoBehaviour
     public void SetSOAsset(ItemBehavior item)
     {
         weaponSOAsset = item.weaponSOAsset;
-        gameObject.GetComponent<SpriteRenderer>().sprite = weaponSOAsset.weaponSprite;
+        //First weapon equipped will automatically be selected
+        if(WeaponSelection.instance.GetComponent<Transform>().childCount == 0)
+            gameObject.GetComponent<SpriteRenderer>().sprite = weaponSOAsset.weaponSpriteSelected;
+        else
+            gameObject.GetComponent<SpriteRenderer>().sprite = weaponSOAsset.weaponSprite;
     }
 
-    public void SetSprite(bool selected)    //bool selected detetermines if the "selected" sprite is used
+    public void SetSpriteSelected(bool selected)    //bool selected detetermines if the "selected" sprite is used
     {
         if(selected)
         {

@@ -69,19 +69,27 @@ public class WeaponSelection : MonoBehaviour
         int i = 0;
         if(transform != null)
         {
-            foreach (Transform weapon in transform)
-            {
-                if (i == selectedWeapon)
+            //if (transform.childCount == 1)
+            //{
+            //    transform.GetChild(0).GetComponent<WeaponBehavior>().SetSpriteSelected(true);
+            //}
+            //else
+            //{
+                foreach (Transform weapon in transform)
                 {
-                    //weapon.gameObject.SetActive(true);
-                    weapon.GetComponent<WeaponBehavior>().SetSprite(true);
+                    if (i == selectedWeapon)
+                    {
+                        //weapon.gameObject.SetActive(true);
+                        weapon.GetComponent<WeaponBehavior>().SetSpriteSelected(true);
+                    }
+                    else
+                    {
+                        //weapon.gameObject.SetActive(true);
+                        weapon.GetComponent<WeaponBehavior>().SetSpriteSelected(false);
+                    }
+                    i++;
                 }
-                else
-                {
-                    weapon.GetComponent<WeaponBehavior>().SetSprite(false);
-                }
-                i++;
-            }
+            //}
         }
     }
 

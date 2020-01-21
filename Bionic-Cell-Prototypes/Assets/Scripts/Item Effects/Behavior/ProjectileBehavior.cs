@@ -23,4 +23,15 @@ public class ProjectileBehavior : MonoBehaviour
         projectileSOAsset = weaponBehavior.weaponSOAsset.projectileSOAsset;
         gameObject.GetComponent<SpriteRenderer>().sprite = projectileSOAsset.projectileSprite;
     }
+
+    private void OnTriggerEnter2D(Collider2D collider)
+    {
+        //For testing only
+        if (collider.tag == "Enemy")
+        {
+            collider.GetComponent<EnemyBehavior>().TakeDamage(25);
+            //For testing only
+            Destroy(gameObject);
+        }
+    }
 }

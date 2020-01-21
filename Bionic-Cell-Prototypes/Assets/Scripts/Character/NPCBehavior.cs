@@ -108,6 +108,8 @@ public class NPCBehavior : MonoBehaviour
         if (health <= 0)
         {
             Debug.Log("NPC/Enemy has died");
+            //For testing only
+            Destroy(gameObject);
         }
     }
 

@@ -40,6 +40,7 @@ public class PlayerController : MonoBehaviour
     //Take damage from colliding into enemies or projectiles
     private void OnTriggerEnter2D(Collider2D enemyDamage)     
     {
+        //For testing only
         if (enemyDamage.name == "OuchCube")
             TakeDamage(enemyDamage.GetComponent<OuchCubeTest>().damage);
     }

@@ -279,6 +279,7 @@ GameObject:
   - component: {fileID: 260450476629291345}
   - component: {fileID: 260450476629291344}
   - component: {fileID: 260450476629291346}
+  - component: {fileID: 8310587957090236206}
   - component: {fileID: 5871104904344173803}
   m_Layer: 0
   m_Name: BionicCell
@@ -370,6 +371,18 @@ MonoBehaviour:
   rotationSpeed: 90
   rotate: 1
   playerHealth: 100
+--- !u!114 &8310587957090236206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 260450476629291351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9f6cee3283078446b3902e6a8dbc44e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!58 &5871104904344173803
 CircleCollider2D:
   m_ObjectHideFlags: 0

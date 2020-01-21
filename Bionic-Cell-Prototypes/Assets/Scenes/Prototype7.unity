@@ -161,6 +161,7 @@ GameObject:
   - component: {fileID: 572685128}
   - component: {fileID: 572685127}
   - component: {fileID: 572685129}
+  - component: {fileID: 572685130}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -251,6 +252,45 @@ MonoBehaviour:
   randomMovement: 0
   waypoints: []
   useWP: 0
+--- !u!60 &572685130
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 572685126}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.83, y: 0.84}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.225, y: -0.12}
+      - {x: 0.16499999, y: 0.21}
+      - {x: 0.035, y: 0.29}
+      - {x: -0.044999998, y: 0.29}
+      - {x: -0.13499999, y: 0.17}
+      - {x: -0.195, y: 0}
+      - {x: -0.265, y: -0.16}
+      - {x: -0.265, y: -0.24}
+      - {x: -0.095, y: -0.35999998}
+      - {x: 0.044999998, y: -0.35999998}
+      - {x: 0.16499999, y: -0.29999998}
+      - {x: 0.235, y: -0.24}
+      - {x: 0.265, y: -0.19999999}
+      - {x: 0.265, y: -0.17999999}
 --- !u!1 &999095172
 GameObject:
   m_ObjectHideFlags: 0
@@ -427,12 +467,12 @@ PrefabInstance:
     - target: {fileID: 6734769032874483529, guid: 834d2ed81fb199b4f9c12d5f29a2ecac,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.44
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 6734769032874483529, guid: 834d2ed81fb199b4f9c12d5f29a2ecac,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.65
+      value: 2.51
       objectReference: {fileID: 0}
     - target: {fileID: 6734769032874483529, guid: 834d2ed81fb199b4f9c12d5f29a2ecac,
         type: 3}
@@ -552,6 +592,7 @@ GameObject:
   - component: {fileID: 2112073268}
   - component: {fileID: 2112073267}
   - component: {fileID: 2112073266}
+  - component: {fileID: 2112073269}
   m_Layer: 0
   m_Name: Enemy (1)
   m_TagString: Enemy
@@ -642,3 +683,45 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!60 &2112073269
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2112073265}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.83, y: 0.84}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.415, y: 0.21}
+      - {x: 0.415, y: 0.26999998}
+      - {x: 0.285, y: 0.34}
+      - {x: 0.195, y: 0.35999998}
+      - {x: -0.114999995, y: 0.35999998}
+      - {x: -0.265, y: 0.35}
+      - {x: -0.36499998, y: 0.29999998}
+      - {x: -0.405, y: 0.25}
+      - {x: -0.405, y: 0.22}
+      - {x: -0.345, y: 0.19}
+      - {x: -0.114999995, y: 0.17999999}
+      - {x: -0.095, y: -0.37}
+      - {x: -0.065, y: -0.41}
+      - {x: 0.065, y: -0.41}
+      - {x: 0.085, y: -0.37}
+      - {x: 0.085, y: -0.08}
+      - {x: 0.13499999, y: 0.17}

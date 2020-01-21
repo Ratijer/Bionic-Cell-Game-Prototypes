@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class WeaponSelection : MonoBehaviour
 {
+    public static WeaponSelection instance;
     public int selectedWeapon;
 
     // Start is called before the first frame update
     void Start()
     {
         SelectWeapon();
+        instance = this;
     }
 
     // Update is called once per frame
@@ -65,19 +67,28 @@ public class WeaponSelection : MonoBehaviour
     private void SelectWeapon()
     {
         int i = 0;
-        foreach(Transform weapon in transform)
+        if(transform != null)
         {
-            if(i == selectedWeapon)
+            foreach (Transform weapon in transform)
             {
-                //weapon.gameObject.SetActive(true);
-                weapon.gameObject.GetComponent<PortBehavior>().enabled = true;
+                if (i == selectedWeapon)
+                {
+                    //weapon.gameObject.SetActive(true);
+                    weapon.GetComponent<WeaponBehavior>().SetSprite(true);
+                }
+                else
+                {
+                    weapon.GetComponent<WeaponBehavior>().SetSprite(false);
+                }
+                i++;
             }
-            else
-            {
-                //weapon.gameObject.SetActive(false);
-                weapon.gameObject.GetComponent<PortBehavior>().enabled = false;
-            }
-            i++;
         }
+    }
+
+    public void AddWeapon(GameObject weapon)
+    {
+        //GO weapon becomes child of the weapons object
+        // Sets "newParent" as the new parent of the child GameObject.
+        weapon.transform.SetParent(transform);
     }
 }

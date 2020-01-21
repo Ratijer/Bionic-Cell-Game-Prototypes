@@ -15,15 +15,20 @@ public class LobberEffect : WeaponEffect
 
     public override void RegisterEventEffect()
     {
-        port.AttackEvent += CauseEventEffect;
-
         //Equip weapon
         weapon = GameObject.Instantiate(item.weaponSOAsset.weaponPrefab, port.transform.position /*+ new Vector3(0, 0.5f, 0)*/, Quaternion.identity) as GameObject;
         weaponBehavior = weapon.GetComponent<WeaponBehavior>();
         weaponBehavior.SetSOAsset(item);
         weaponBehavior.SetPort(port);
 
-        cooldown = weaponBehavior.weaponSOAsset.projectileSOAsset.fireRate;     //Cooldown is fire rate
+        //port.AttackEvent += CauseEventEffect;
+        weaponBehavior.AttackEvent += CauseEventEffect;
+
+        //Cooldown is fire rate
+        cooldown = weaponBehavior.weaponSOAsset.projectileSOAsset.fireRate;     
+
+        //Add to weapons game object in hierarchy 
+        WeaponSelection.instance.AddWeapon(weapon);
 
         Debug.Log("Registered Lobber!");
     }

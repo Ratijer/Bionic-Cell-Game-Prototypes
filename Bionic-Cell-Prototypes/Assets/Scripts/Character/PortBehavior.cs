@@ -9,8 +9,8 @@ public class PortBehavior : MonoBehaviour
 
     //private float _nextFire = 0.0f;
 
-    public delegate void VoidWithNoArguments();
-    public event VoidWithNoArguments AttackEvent;
+    //public delegate void VoidWithNoArguments();
+    //public event VoidWithNoArguments AttackEvent;
 
     // Start is called before the first frame update
     void Start()
@@ -19,15 +19,15 @@ public class PortBehavior : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKey(KeyCode.Space))
-        {
-            Shoot();
-        }
+    //void Update()
+    //{
+    //    if (Input.GetKey(KeyCode.Space))
+    //    {
+    //        Shoot();
+    //    }
 
-        RemoveItems();
-    }
+    //    //RemoveItems();
+    //}
 
     public void EquipItem(ItemBehavior item)
     {
@@ -38,29 +38,29 @@ public class PortBehavior : MonoBehaviour
         }
     }
 
-    private void RemoveItems()  //For testing purposes only
-    {
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            if (AttackEvent != null)
-            {
-                foreach (Delegate d in AttackEvent.GetInvocationList())
-                {
-                    AttackEvent -= (VoidWithNoArguments)d;
-                }
-            }
-        }
-    }
+    //private void RemoveItems()  //For testing purposes only
+    //{
+    //    if (Input.GetKeyDown(KeyCode.R))
+    //    {
+    //        if (AttackEvent != null)
+    //        {
+    //            foreach (Delegate d in AttackEvent.GetInvocationList())
+    //            {
+    //                AttackEvent -= (VoidWithNoArguments)d;
+    //            }
+    //        }
+    //    }
+    //}
 
-    private void Shoot()
-    {
-        //if (Time.time > _nextFire)
-        //{
-            if (AttackEvent != null)
-            {
-                AttackEvent.Invoke();
-            }
-        //    _nextFire = Time.time + _fireRate;
-        //}
-    }
+    //private void Shoot()
+    //{
+    //    //if (Time.time > _nextFire)
+    //    //{
+    //        if (AttackEvent != null)
+    //        {
+    //            AttackEvent.Invoke();
+    //        }
+    //    //    _nextFire = Time.time + _fireRate;
+    //    //}
+    //}
 }

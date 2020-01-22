@@ -14,6 +14,7 @@ public class WeaponSelection : MonoBehaviour
     public static WeaponSelection instance;
     public int selectedWeapon;
     public float abilityMeterFill = 0;   //Starts at 0. When at 100, player can fire all weapons at once
+    public float abilityTime = 100;
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +33,16 @@ public class WeaponSelection : MonoBehaviour
             weaponControl = WeaponControl.FireAll;
         }
     }
+
+    public void AddToAbilityMeter(float value)
+    {
+        if(abilityMeterFill < 100)
+        {
+            abilityMeterFill += value;
+        }
+    }
+
+    //Finite state machine
     public void UpdateFSM()
     {
         switch (weaponControl)
@@ -55,8 +66,11 @@ public class WeaponSelection : MonoBehaviour
                 //weapon.gameObject.SetActive(true);
                 weapon.GetComponent<WeaponBehavior>().SetSpriteSelected(true);
             }
+
+            //The numer 1000 is for testing purposes only
+            abilityMeterFill -= 1000 / abilityTime * Time.deltaTime;   //Meter gradually goes down
         }
-        else
+        else //Ability ends when meter is at 0
         {
             foreach (Transform weapon in transform)
             {
@@ -64,6 +78,7 @@ public class WeaponSelection : MonoBehaviour
                 weapon.GetComponent<WeaponBehavior>().SetSpriteSelected(false);
             }
             weaponControl = WeaponControl.FireOne;
+            abilityMeterFill = 0;   //Make sure meter is at 0 and not in the negatives
         }
     }
 

@@ -13,6 +13,7 @@ public class WeaponSelection : MonoBehaviour
 
     public static WeaponSelection instance;
     public int selectedWeapon;
+    public float abilityMeterFill = 0;   //Starts at 0. When at 100, player can fire all weapons at once
 
     // Start is called before the first frame update
     void Start()
@@ -26,8 +27,7 @@ public class WeaponSelection : MonoBehaviour
     {
         UpdateFSM();
 
-        //For testing only
-        if (Input.GetKey(KeyCode.Q))
+        if (Input.GetKey(KeyCode.Q) && abilityMeterFill >= 100)
         {
             weaponControl = WeaponControl.FireAll;
         }
@@ -48,14 +48,23 @@ public class WeaponSelection : MonoBehaviour
     //All weapons will be selected and will be able to activate all at the same time 
     private void FireAllWeapons()
     {
-        //if (Input.GetKey(KeyCode.Q))
-        //{
+        if (abilityMeterFill > 0)
+        {
             foreach (Transform weapon in transform)
             {
                 //weapon.gameObject.SetActive(true);
                 weapon.GetComponent<WeaponBehavior>().SetSpriteSelected(true);
             }
-        //}
+        }
+        else
+        {
+            foreach (Transform weapon in transform)
+            {
+                //weapon.gameObject.SetActive(true);
+                weapon.GetComponent<WeaponBehavior>().SetSpriteSelected(false);
+            }
+            weaponControl = WeaponControl.FireOne;
+        }
     }
 
     private void WeaponScrollControl()

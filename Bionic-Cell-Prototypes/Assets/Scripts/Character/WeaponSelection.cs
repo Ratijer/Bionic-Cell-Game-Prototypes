@@ -14,7 +14,7 @@ public class WeaponSelection : MonoBehaviour
     public static WeaponSelection instance;
     public int selectedWeapon;
     public float abilityMeterFill = 0;   //Starts at 0. When at 100, player can fire all weapons at once
-    public float abilityTime = 100;
+    private float abilityTime = 100;
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +31,12 @@ public class WeaponSelection : MonoBehaviour
         if (Input.GetKey(KeyCode.Q) && abilityMeterFill >= 100)
         {
             weaponControl = WeaponControl.FireAll;
+        }
+
+        //For testing only
+        if(Input.GetKey(KeyCode.F) && abilityMeterFill <= 0)
+        {
+            abilityMeterFill = 100;
         }
     }
 

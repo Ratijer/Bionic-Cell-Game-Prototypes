@@ -76,6 +76,7 @@
     <Compile Include="Assets\Scripts\OuchCubeTest.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\ProjectileSOAsset.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\WeaponSOAsset.cs" />
+    <Compile Include="Assets\Scripts\UI and Menu\MenuController.cs" />
     <Compile Include="Assets\Scripts\UI and Menu\UIController.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />

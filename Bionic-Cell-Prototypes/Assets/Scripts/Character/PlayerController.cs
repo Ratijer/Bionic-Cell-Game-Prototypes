@@ -11,7 +11,8 @@ public class PlayerController : MonoBehaviour
     public float movementSpeed;
     public float rotationSpeed;
     public bool rotate;
-    public float playerHealth;
+    //"Static" is for testing only
+    public static float playerHealth = 100;
 
     // Start is called before the first frame update
     void Start()

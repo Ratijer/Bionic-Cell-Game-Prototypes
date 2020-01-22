@@ -7,7 +7,8 @@ using TMPro;
 public class UIController : MonoBehaviour
 {
     //For test purposes only
-    public TextMeshProUGUI abilityMeter;    //When filled up to 100 (maximum), player can fire all items at once.
+    public TextMeshProUGUI abilityMeter;    //When filled up to 100 (maximum), player can fire all items
+    public TextMeshProUGUI playerHealth;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +18,7 @@ public class UIController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        abilityMeter.text = WeaponSelection.instance.abilityMeterFill.ToString();
+        abilityMeter.text = "Meter: " + WeaponSelection.instance.abilityMeterFill.ToString();
+        playerHealth.text = "Health: " + PlayerController.playerHealth.ToString();
     }
 }
